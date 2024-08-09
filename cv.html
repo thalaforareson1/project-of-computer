@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CV with Animation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2E3440;
+            color: #D8DEE9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 2s;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #3B4252;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #D8DEE9;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            background-color: #4C566A;
+            color: #ECEFF4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #434C5E;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile {
+            display: none;
+        }
+
+        .profile.active {
+            display: block;
+            animation: slideIn 1s;
+        }
+
+        .profile h1 {
+            font-size: 28px;
+            color: #88C0D0;
+        }
+
+        a {
+            color: #81A1C1;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        .join-us {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .join-us a {
+            background-color: #88C0D0;
+            padding: 10px 20px;
+            color: #2E3440;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .join-us a:hover {
+            background-color: #81A1C1;
+        }
+
+        /* Typewriter Animation */
+        .typewriter p {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            overflow: hidden;
+            border-right: 2px solid #D8DEE9;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 2px;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #D8DEE9; }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" onclick="showProfile('profile1')">Riwaj Bajgain</a>
+        <a href="#" onclick="showProfile('profile2')">Hemanta Adhikari</a>
+        <a href="#" onclick="showProfile('profile3')">Reejan Poudel</a>
+        <a href="#" onclick="showProfile('profile4')">Pranjal Ojha</a>
+        <a href="#" onclick="showProfile('profile5')">Mausam Kafle</a>
+        <a href="#" onclick="showProfile('profile6')">Prasanna Gautam</a>
+    </div>
+
+    <div class="container">
+        <section class="profile" id="profile1">
+            <h1>Riwaj Bajgain</h1>
+            <div class="typewriter">
+                <p>Group leader aspiring to become a football coach with a passion for playing football.</p>
+            </div>
+            <p><a href="https://maps.google.com?q=Itahari-5, Nepal" target="_blank">Itahari-5, Nepal</a></p>
+            <p>Phone: <a href="tel:+9867995113">9867995113</a></p>
+            <p>Email: <a href="mailto:rewajbajgai4@gmail.com">rewajbajgai4@gmail.com</a></p>
+            <h2>Education</h2>
+            <p>Class 9 E</p>
+            <h2>Skills</h2>
+            <ul>
+                <li>Hardworking</li>
+                <li>High-voiced</li>
+                <li>Political style</li>
+                <li>Sportsman</li>
+            </ul>
+            <h2>Extracurricular Activities</h2>
+            <p>Football: Actively improving skills and fitness.</p>
+        </section>
+
+        <section class="profile" id="profile2">
+            <h1>Hemanta Adhikari</h1>
+            <div class="typewriter">
+                <p>To be a successful person in life.</p>
+            </div>
+            <p><a href="https://maps.google.com?q=Itahari-13, Nepal" target="_blank">Itahari-13, Nepal</a></p>
+            <p>Phone: <a href="tel:+9807331031">9807331031</a></p>
+            <p>Email: <a href="mailto:hemantaadhikari562@gmail.com">hemantaadhikari562@gmail.com</a></p>
+            <h2>Education</h2>
+            <p>Class 9 E</p>
+            <h2>Skills</h2>
+            <ul>
+                <li>Hardworking</li>
+                <li>Artsman</li>
+                <li>Sportsman</li>
+            </ul>
+            <h2>Extracurricular Activities</h2>
+            <p>Arts, Cricket</p>
+        </section>
+
+        <section class="profile" id="profile3">
+            <h1>Reejan Poudel</h1>
+            <div class="typewriter">
+                <p>To be a successful footballer in life.</p>
+            </div>
+            <p><a href="https://maps.google.com?q=Itahari-2, Nepal" target="_blank">Itahari-2, Nepal</a></p>
+            <p>Phone: <a href="tel:+9812308575">9812308575</a></p>
+            <p>Email: <a href="mailto:Reejanpoudel11@gmail.com">Reejanpoudel11@gmail.com</a></p>
+            <h2>Education</h2>
+            <p>Class 9 E</p>
+            <h2>Skills</h2>
+            <ul>
+                <li>Hardworking</li>
+                <li>Artsman</li>
+                <li>Sportsman</li>
+            </ul>
+            <h2>Extracurricular Activities</h2>
+            <p>Football: Actively improving skills and fitness.</p>
+        </section>
+
+        <section class="profile" id="profile4">
+            <h1>Pranjal Ojha</h1>
+            <div class="typewriter">
+                <p>To become the best footballer of all time. To play for the greatest club Manchester United "RED DEVILS".</p>
+            </div>
+            <p><a href="https://maps.google.com?q=Itahari-9, Nepal" target="_blank">Itahari-9, Nepal</a></p>
+            <p>Phone: <a href="tel:+9804321806">9804321806</a></p>
+            <p>Email: <a href="mailto:ojhapranjal772@gmail.com">ojhapranjal772@gmail.com</a></p>
+            <h2>Education</h2>
+            <p>Class 9 E</p>
+            <h2>Skills</h2>
+            <ul>
+                <li>Hardworking</li>
+                <li>Passionate</li>
+                <li>Focused</li>
+            </ul>
+            <h2>Extracurricular Activities</h2>
+            <p>Football, Cricket</p>
+        </section>
+
+        <section class="profile" id="profile5">
+            <h1>Mausam Kafle</h1>
+            <div class="typewriter">
+                <p>To become a successful IT student.</p>
+            </div>
+            <p><a href="https://maps.google.com?q=Itahari-4, Nepal" target="_blank">Itahari-4, Nepal</a></p>
+            <p>Phone: <a href="tel:+9814891958">9814891958</a></p>
+            <p>Email: <a href="mailto:mausamkafle2017@gmail.com">mausamkafle2017@gmail.com</a></p>
+            <h2>Education</h2>
+            <p>Class 9 E</p>
+            <h2>Skills</h2>
+            <ul>
+                <li>Hardworking</li>
+                <li>Creative</li>
+            </ul>
+            <h2>Extracurricular Activities</h2>
+            <p>Basketball</p>
+        </section>
+
+        <section class="profile" id="profile6">
+            <h1>Prasanna Gautam</h1>
+            <div class="typewriter">
+                <p>To be a successful software engineer.</p>
+            </div>
+            <p><a href="https://maps.google.com?q=Itahari-4, Nepal" target="_blank">Itahari-4, Nepal</a></p>
+            <p>Phone: <a href="tel:+9814891958">9814891958</a></p>
+            <p>Email: <a href="mailto:Prasannagautam543@gmail.com">Prasannagautam543@gmail.com</a></p>
+            <h2>Education</h2>
+            <p>Class 9 E</p>
+            <h2>Skills</h2>
+            <ul>
+                <li>Hardworking</li>
+                <li>Creative</li>
+            </ul>
+            <h2>Extracurricular Activities</h2>
+            <p>Football, Basketball, Software engineering</p>
+        </section>
+
+        <div class="join-us">
+            <a href="form.html">Apply Now</a>
+        </div>
+    </div>
+
+    <script>
+        function showProfile(profileId) {
+            var profiles = document.querySelectorAll('.profile');
+            profiles.forEach(function(profile) {
+                profile.classList.remove('active');
+            });
+
+            var activeProfile = document.getElementById(profileId);
+            activeProfile.classList.add('active');
+        }
+    </script>
+</body>
+</html>
+
+
+
+

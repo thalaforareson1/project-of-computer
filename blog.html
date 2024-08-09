@@ -1,0 +1,308 @@
+
+12:46
+Goma
+Goma Luitel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #2c3e50, #4ca1af);
+            color: #f5f5f5;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo */
+        #logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Navigation Menu */
+        #nav-menu {
+            display: flex;
+            gap: 20px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #nav-menu li {
+            display: inline-block;
+        }
+
+        #nav-menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        #nav-menu li a::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: orange;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+
+        #nav-menu li a:hover::before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+
+        /* Typewriter Animation for Navigation */
+        .typewriter-text {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: .15em solid orange;
+            animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
+        }
+
+        /* Blog Content */
+        .blog-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding-top: 100px;
+        }
+
+        .blog-post {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+            flex-basis: 30%;
+            max-width: 30%;
+            min-width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .blog-post h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #f39c12;
+        }
+
+        .blog-post p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Chat Box */
+        #chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* Chat Popup */
+        #chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 250px;
+            background-color: #fff;
+            color: #000;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        #chat-popup p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        #chat-popup input {
+            width: calc(100% - 20px);
+            padding: 5px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        #chat-popup button {
+            display: block;
+            width: 100%;
+            padding: 5px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #chat-popup button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .blog-post {
+                flex-basis: 80%;
+                max-width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="logo">Blog Title</div>
+        <ul id="nav-menu">
+            <li><a href="#reejan" class="nav-item" data-target="reejan">Reejan Poudel</a></li>
+            <li><a href="#khemraj" class="nav-item" data-target="khemraj">Khem Raj Luitel</a></li>
+            <li><a href="#madav" class="nav-item" data-target="madav">Madav Kafle</a></li>
+            <li><a href="#riwaj" class="nav-item" data-target="riwaj">Riwaj Bajgai</a></li>
+            <li><a href="#prassana" class="nav-item" data-target="prassana">Prassana Gautam</a></li>
+        </ul>
+    </nav>
+
+    <div class="blog-container">
+        <div id="reejan" class="blog-post">
+            <h2>Reejan Poudel</h2>
+            <p><strong>Early Life:</strong> Reejan Poudel was born on 2067/01/30. He loves to play football and aspires to become a professional footballer. His father’s name is Rajan Poudel, and his mother’s name is Sakun Poudel.</p>
+            <p><strong>Aims:</strong> Reejan's primary aim in life is to become a successful footballer. He is dedicated to his training and works hard to achieve his dream.</p>
+            <p><strong>Other Hobbies:</strong> Besides football, Reejan enjoys reading books, playing video games, and spending time with friends and family.</p>
+        </div>
+
+        <div id="khemraj" class="blog-post">
+            <h2>Khem Raj Luitel</h2>
+            <p><strong>Early Life:</strong> Khem Raj Luitel was born on 2067/05/07 in Itahari 8. His inspiration is MS Dhoni, and he dreams of becoming a successful business tycoon.</p>
+            <p><strong>Aims:</strong> Khem Raj Luitel aims to become a business tycoon. He is inspired by the discipline and success of MS Dhoni, which drives him to pursue his goals in the business world.</p>
+        </div>
+
+        <div id="madav" class="blog-post">
+            <h2>Madav Kafle</h2>
+            <p><strong>Early Life:</strong> Madav Kafle was born on 2066/06/28 in Biratnagar. His father’s name is Govinda Prasad Kafle, and his mother’s name is Manju Niraula Kafle.</p>
+            <p><strong>Aims:</strong> Madav aspires to become an IT student and a graphic designer. He is passionate about technology and design, and he works hard to achieve his goals.</p>
+            <p><strong>Other Hobbies:</strong> Madav enjoys coding, designing graphics, and exploring new technologies. He also loves to read about the latest trends in IT and graphic design.</p>
+        </div>
+
+        <div id="riwaj" class="blog-post">
+            <h2>Riwaj Bajgai (Group Leader)</h2>
+            <p><strong>Early Life:</strong> Riwaj Bajgai was born on 2066/07/28. His father's name is Nabaraj Bajgai, and his mother's name is Devi Bajgai. He dreams of becoming a successful web developer and IT specialist.</p>
+            <p><strong>Aims:</strong> Riwaj aims to become a web developer and IT specialist. He is focused on enhancing his skills and knowledge in web development and information technology to achieve his dreams.</p>
+        </div>
+
+        <div id="prassana" class="blog-post">
+            <h2>Prassana Gautam</h2>
+            <p><strong>Early Life:</strong> Prassana Gautam was born on 2066/04/11. His father’s name is Mohan Gautam, and his mother’s name is Pramila Gautam. He loves cricket and aims to become a great cricketer like his idol, Mahendra Singh Dhoni.</p>
+            <p><strong>Aims:</strong> Prassana's primary goal is to become a cricketer. He is inspired by MS Dhoni and strives to achieve excellence in cricket.</p>
+        </div>
+    </div>
+
+    <div id="chat-icon">&#x1F4AC;</div>
+    <div id="chat-popup">
+        <p>Welcome! How can I assist you today?</p>
+        <input type="text" id="chat-input" placeholder="Ask something...">
+        <button onclick="processChat()">Send</button>
+        <button onclick="hideChat()">Close</button>
+    </div>
+
+    <script>
+        // Typewriter Effect for Navigation Items
+        document.addEventListener("DOMContentLoaded", () => {
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('typewriter-text');
+                }, index * 500); // Delays each item by 0.5s
+            });
+        });
+
+        // Chat Icon Functionality
+        const chatIcon = document.getElementById('chat-icon');
+        const chatPopup = document.getElementById('chat-popup');
+        const chatInput = document.getElementById('chat-input');
+
+        chatIcon.addEventListener('click', () => {
+            chatPopup.style.display = 'block';
+        });
+
+        function hideChat() {
+            chatPopup.style.display = 'none';
+        }
+
+        // Process Chat Input
+        function processChat() {
+            const userInput = chatInput.value.toLowerCase();
+            if (userInput.includes('cv')) {
+                alert('Here is the link to your CV: [Click Here](cv.html)');
+                window.location.href = 'cv.html';
+            } else {
+                alert('I’m sorry, I didn’t understand that. Please ask something else.');
+            }
+            chatInput.value = ''; // Clear the input field
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
